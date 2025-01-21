@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.vdh{
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: transparent;
+    box-shadow: 0 0 25px rgba(112, 88, 10, 0.918);
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Form Start */
+.vdh .form-box{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+}
+.vdh .form-box.login{
+    left: 0;
+    padding: 0 60px 0 40px;
+   
+}
+.vdh .form-box.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+.vdh.active .form-box.login .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(2px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.vdh .form-box.register{
+      right: 0;
+      padding: 0 40px 0 60px;
+      pointer-events: none;
+     
+}
+.vdh.active .form-box.register{
+    pointer-events: auto;
+}
+.vdh .form-box.register .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+
+}
+.vdh.active .form-box.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+.form-box h2 {
+    font-size: 32px;
+    color:  rgba(112, 88, 10, 0.918);
+    text-align: center;
+}
+.form-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+    margin: 25px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid  rgba(112, 88, 10, 0.918);
+    padding-right: 35px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    transition: .5s ease-in-out;
+}
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom-color:   rgba(112, 88, 10, 0.918) ;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color:  rgba(112, 88, 10, 0.918);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+    color: black;
+}
+
+
+
+
+
+
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color:  rgba(112, 88, 10, 0.918);
+    transition: .5s ease-in-out;
+}
+.input-box input:focus~i,
+.input-box input:valid~i{
+    color:  black;
+}
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: 2px solid   rgba(112, 88, 10, 0.918);
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgba(112, 88, 10, 0.918) ;
+    font-weight: 600;
+    overflow: hidden;
+    transition: 0s ;
+}
+.btn:hover{
+    color: red;
+}
+
+
+.a1:hover{
+    background-color: #000000;
+}
+
+.form-box .logreg-link{
+    font-size: 14.5px;
+    color:  rgba(112, 88, 10, 0.918);
+    text-align: center;
+    margin: 20px 0 10px;
+
+}
+.logreg-link p a{
+    color: rgba(112, 88, 10, 0.918);
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.logreg-link p a:hover{
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+}
+
+.vdh .info-text{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.vdh .info-text.login{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+.vdh .info-text.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+.vdh.active .info-text.login .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(6px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+.vdh .info-text.register{
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+    
+}
+.vdh .info-text.register .animation{
+    transform: translateX(-120%);
+    transition: .7s ease;
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--j));
+}
+.vdh.active .info-text.register{
+    pointer-events: auto;
+}
+
+.vdh.active .info-text.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+.info-text h2 {
+    font-size: 32px;
+    color: white;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+.info-text p {
+    font-size: 16px;
+    color: white;
+}
+.vdh .bg-animate{
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 850px;
+    height: 600px;
+    background: linear-gradient(45deg,rgba(112, 88, 10, 0.918),rgba(167, 132, 20, 0.918));
+    border-bottom: 3px solid rgba(0, 0, 0, 0.918);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+
+}
+.vdh.active .bg-animate{
+    transform: rotate(0) skewY(0);
+    transition-delay: .5s;
+}
+.vdh .bg-animate2{
+    position: absolute;
+    top: 100%;
+    left: 250px;
+    width: 850px;
+    height: 700px;
+    background: white;
+    border-top: 3px solid #000000;
+    transform: rotate(0) skewY(0);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s ;
+
+}
+.vdh.active .bg-animate2{
+     transform: rotate(-11deg) skewY(-40deg);
+     transition-delay: 1.2s;
+}
+/* Form End */
